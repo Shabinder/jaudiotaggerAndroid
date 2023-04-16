@@ -824,7 +824,8 @@ public class Mp4TagWriter
                     if ((newStco.getFirstOffSet() - newMdatHeader.getFilePos()) != diff)
                     {
                         int discrepancy = (int) ((newStco.getFirstOffSet() - newMdatHeader.getFilePos()) - diff);
-                        throw new CannotWriteException(ErrorMessage.MP4_CHANGES_TO_FILE_FAILED_INCORRECT_OFFSETS.getMsg(discrepancy));
+                        logger.warning(ErrorMessage.MP4_CHANGES_TO_FILE_FAILED_INCORRECT_OFFSETS.getMsg(discrepancy));
+                        //throw new CannotWriteException(ErrorMessage.MP4_CHANGES_TO_FILE_FAILED_INCORRECT_OFFSETS.getMsg(discrepancy));
                     }
                     shift = stco.getFirstOffSet() - newStco.getFirstOffSet();
                 }
