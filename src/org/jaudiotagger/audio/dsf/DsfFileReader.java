@@ -4,6 +4,8 @@
  */
 package org.jaudiotagger.audio.dsf;
 
+import static org.jaudiotagger.audio.dsf.DsdChunk.CHUNKSIZE_LENGTH;
+
 import org.jaudiotagger.audio.AudioFileIO;
 import org.jaudiotagger.audio.exceptions.CannotReadException;
 import org.jaudiotagger.audio.generic.AudioFileReader2;
@@ -23,8 +25,6 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.logging.Level;
-
-import static org.jaudiotagger.audio.dsf.DsdChunk.CHUNKSIZE_LENGTH;
 
 /**
  * Reads the ID3 Tags as specified by <a href=

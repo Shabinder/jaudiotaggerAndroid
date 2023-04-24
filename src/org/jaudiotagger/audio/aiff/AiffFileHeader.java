@@ -1,5 +1,11 @@
 package org.jaudiotagger.audio.aiff;
 
+import static org.jaudiotagger.audio.aiff.AiffType.AIFC;
+import static org.jaudiotagger.audio.aiff.AiffType.AIFF;
+import static org.jaudiotagger.audio.iff.IffHeaderChunk.HEADER_LENGTH;
+import static org.jaudiotagger.audio.iff.IffHeaderChunk.TYPE_LENGTH;
+import static java.nio.ByteOrder.BIG_ENDIAN;
+
 import org.jaudiotagger.audio.exceptions.CannotReadException;
 import org.jaudiotagger.audio.generic.Utils;
 import org.jaudiotagger.logging.Hex;
@@ -8,12 +14,6 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.logging.Logger;
-
-import static java.nio.ByteOrder.BIG_ENDIAN;
-import static org.jaudiotagger.audio.aiff.AiffType.AIFC;
-import static org.jaudiotagger.audio.aiff.AiffType.AIFF;
-import static org.jaudiotagger.audio.iff.IffHeaderChunk.HEADER_LENGTH;
-import static org.jaudiotagger.audio.iff.IffHeaderChunk.TYPE_LENGTH;
 
 /**
  * <p>

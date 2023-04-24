@@ -18,14 +18,14 @@
  */
 package org.jaudiotagger.audio.wav;
 
+import static org.jaudiotagger.audio.iff.IffHeaderChunk.HEADER_LENGTH;
+
 import org.jaudiotagger.audio.exceptions.CannotReadException;
 import org.jaudiotagger.audio.generic.Utils;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
-
-import static org.jaudiotagger.audio.iff.IffHeaderChunk.HEADER_LENGTH;
 
 /**
  * Processes the Wav Header

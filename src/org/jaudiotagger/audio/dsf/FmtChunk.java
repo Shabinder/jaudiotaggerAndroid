@@ -1,5 +1,7 @@
 package org.jaudiotagger.audio.dsf;
 
+import static org.jaudiotagger.audio.dsf.DsdChunk.CHUNKSIZE_LENGTH;
+
 import org.jaudiotagger.audio.generic.GenericAudioHeader;
 import org.jaudiotagger.audio.generic.Utils;
 import org.jaudiotagger.audio.iff.IffHeaderChunk;
@@ -10,8 +12,6 @@ import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import static org.jaudiotagger.audio.dsf.DsdChunk.CHUNKSIZE_LENGTH;
 
 
 /**

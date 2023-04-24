@@ -2,7 +2,16 @@
 package org.jaudiotagger.audio.aiff;
 
 import org.jaudiotagger.audio.AudioFileIO;
-import org.jaudiotagger.audio.aiff.chunk.*;
+import org.jaudiotagger.audio.aiff.chunk.AiffChunkReader;
+import org.jaudiotagger.audio.aiff.chunk.AiffChunkType;
+import org.jaudiotagger.audio.aiff.chunk.AnnotationChunk;
+import org.jaudiotagger.audio.aiff.chunk.ApplicationChunk;
+import org.jaudiotagger.audio.aiff.chunk.AuthorChunk;
+import org.jaudiotagger.audio.aiff.chunk.CommentsChunk;
+import org.jaudiotagger.audio.aiff.chunk.CommonChunk;
+import org.jaudiotagger.audio.aiff.chunk.CopyrightChunk;
+import org.jaudiotagger.audio.aiff.chunk.FormatVersionChunk;
+import org.jaudiotagger.audio.aiff.chunk.NameChunk;
 import org.jaudiotagger.audio.exceptions.CannotReadException;
 import org.jaudiotagger.audio.generic.GenericAudioHeader;
 import org.jaudiotagger.audio.generic.Utils;

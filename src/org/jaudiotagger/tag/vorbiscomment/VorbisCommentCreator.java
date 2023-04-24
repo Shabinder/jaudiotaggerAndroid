@@ -18,6 +18,8 @@
  */
 package org.jaudiotagger.tag.vorbiscomment;
 
+import static org.jaudiotagger.StandardCharsets.UTF_8;
+
 import org.jaudiotagger.audio.generic.AbstractTagCreator;
 import org.jaudiotagger.audio.generic.Utils;
 import org.jaudiotagger.tag.Tag;
@@ -28,8 +30,6 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.Iterator;
-
-import static org.jaudiotagger.StandardCharsets.UTF_8;
 
 /**
  * Create the raw packet data for a Vorbis Comment Tag

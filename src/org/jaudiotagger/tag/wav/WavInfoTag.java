@@ -21,7 +21,11 @@ package org.jaudiotagger.tag.wav;
 import org.jaudiotagger.audio.generic.GenericTag;
 import org.jaudiotagger.audio.iff.ChunkHeader;
 import org.jaudiotagger.logging.Hex;
-import org.jaudiotagger.tag.*;
+import org.jaudiotagger.tag.FieldDataInvalidException;
+import org.jaudiotagger.tag.FieldKey;
+import org.jaudiotagger.tag.KeyNotFoundException;
+import org.jaudiotagger.tag.TagField;
+import org.jaudiotagger.tag.TagTextField;
 
 import java.util.ArrayList;
 import java.util.EnumSet;

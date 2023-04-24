@@ -1,7 +1,11 @@
 package org.jaudiotagger.audio;
 
 import org.jaudiotagger.audio.dsf.Dsf;
-import org.jaudiotagger.audio.exceptions.*;
+import org.jaudiotagger.audio.exceptions.CannotReadException;
+import org.jaudiotagger.audio.exceptions.CannotWriteException;
+import org.jaudiotagger.audio.exceptions.NoReadPermissionsException;
+import org.jaudiotagger.audio.exceptions.NoWritePermissionsException;
+import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
 import org.jaudiotagger.audio.flac.metadatablock.MetadataBlockDataPicture;
 import org.jaudiotagger.audio.real.RealTag;
 import org.jaudiotagger.logging.ErrorMessage;

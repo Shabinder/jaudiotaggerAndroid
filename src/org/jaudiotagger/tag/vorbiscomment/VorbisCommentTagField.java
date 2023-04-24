@@ -18,14 +18,21 @@
  */
 package org.jaudiotagger.tag.vorbiscomment;
 
+import static org.jaudiotagger.tag.vorbiscomment.VorbisCommentFieldKey.ALBUM;
+import static org.jaudiotagger.tag.vorbiscomment.VorbisCommentFieldKey.ARTIST;
+import static org.jaudiotagger.tag.vorbiscomment.VorbisCommentFieldKey.COMMENT;
+import static org.jaudiotagger.tag.vorbiscomment.VorbisCommentFieldKey.DATE;
+import static org.jaudiotagger.tag.vorbiscomment.VorbisCommentFieldKey.DESCRIPTION;
+import static org.jaudiotagger.tag.vorbiscomment.VorbisCommentFieldKey.GENRE;
+import static org.jaudiotagger.tag.vorbiscomment.VorbisCommentFieldKey.TITLE;
+import static org.jaudiotagger.tag.vorbiscomment.VorbisCommentFieldKey.TRACKNUMBER;
+
 import org.jaudiotagger.StandardCharsets;
 import org.jaudiotagger.tag.TagField;
 import org.jaudiotagger.tag.TagTextField;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
-
-import static org.jaudiotagger.tag.vorbiscomment.VorbisCommentFieldKey.*;
 
 /**
  * This class represents the name and content of a tag entry in ogg-files.

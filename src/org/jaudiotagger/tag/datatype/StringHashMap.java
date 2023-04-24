@@ -23,6 +23,8 @@
  */
 package org.jaudiotagger.tag.datatype;
 
+import static org.jaudiotagger.StandardCharsets.ISO_8859_1;
+
 import org.jaudiotagger.tag.id3.AbstractTagFrameBody;
 import org.jaudiotagger.tag.reference.Languages;
 
@@ -30,8 +32,6 @@ import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeSet;
-
-import static org.jaudiotagger.StandardCharsets.ISO_8859_1;
 
 
 /**

@@ -18,20 +18,24 @@
  */
 package org.jaudiotagger.audio.generic;
 
+import static org.jaudiotagger.StandardCharsets.ISO_8859_1;
+import static org.jaudiotagger.StandardCharsets.US_ASCII;
+
 import org.jaudiotagger.audio.AudioFile;
 import org.jaudiotagger.audio.AudioFileIO;
 import org.jaudiotagger.utils.FileTypeUtil;
 
-import java.io.*;
+import java.io.DataInput;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import static org.jaudiotagger.StandardCharsets.ISO_8859_1;
-import static org.jaudiotagger.StandardCharsets.US_ASCII;
 
 /**
  * Contains various frequently used static functions in the different tag formats.

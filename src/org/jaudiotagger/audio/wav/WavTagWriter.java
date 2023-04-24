@@ -18,6 +18,9 @@
  */
 package org.jaudiotagger.audio.wav;
 
+import static org.jaudiotagger.audio.iff.IffHeaderChunk.SIGNATURE_LENGTH;
+import static org.jaudiotagger.audio.iff.IffHeaderChunk.SIZE_LENGTH;
+
 import org.jaudiotagger.StandardCharsets;
 import org.jaudiotagger.audio.AudioFileIO;
 import org.jaudiotagger.audio.exceptions.CannotReadException;
@@ -28,11 +31,19 @@ import org.jaudiotagger.audio.iff.ChunkSummary;
 import org.jaudiotagger.audio.iff.IffHeaderChunk;
 import org.jaudiotagger.audio.wav.chunk.WavChunkSummary;
 import org.jaudiotagger.audio.wav.chunk.WavInfoIdentifier;
-import org.jaudiotagger.tag.*;
+import org.jaudiotagger.tag.FieldKey;
+import org.jaudiotagger.tag.Tag;
+import org.jaudiotagger.tag.TagField;
+import org.jaudiotagger.tag.TagOptionSingleton;
+import org.jaudiotagger.tag.TagTextField;
 import org.jaudiotagger.tag.wav.WavInfoTag;
 import org.jaudiotagger.tag.wav.WavTag;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
@@ -41,9 +52,6 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Logger;
-
-import static org.jaudiotagger.audio.iff.IffHeaderChunk.SIGNATURE_LENGTH;
-import static org.jaudiotagger.audio.iff.IffHeaderChunk.SIZE_LENGTH;
 
 /**
  * Write Wav Tag.

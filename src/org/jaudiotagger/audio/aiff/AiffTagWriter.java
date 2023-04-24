@@ -18,6 +18,9 @@
  */
 package org.jaudiotagger.audio.aiff;
 
+import static org.jaudiotagger.audio.iff.IffHeaderChunk.SIGNATURE_LENGTH;
+import static org.jaudiotagger.audio.iff.IffHeaderChunk.SIZE_LENGTH;
+
 import org.jaudiotagger.audio.AudioFileIO;
 import org.jaudiotagger.audio.aiff.chunk.AiffChunkSummary;
 import org.jaudiotagger.audio.aiff.chunk.AiffChunkType;
@@ -32,14 +35,15 @@ import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagOptionSingleton;
 import org.jaudiotagger.tag.aiff.AiffTag;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
 import java.util.logging.Logger;
-
-import static org.jaudiotagger.audio.iff.IffHeaderChunk.SIGNATURE_LENGTH;
-import static org.jaudiotagger.audio.iff.IffHeaderChunk.SIZE_LENGTH;
 
 
 /**

@@ -18,10 +18,20 @@
  */
 package org.jaudiotagger.audio.flac;
 
+import static org.jaudiotagger.utils.PrimitiveUtils.safeLongToInt;
+
 import org.jaudiotagger.audio.AudioFileIO;
 import org.jaudiotagger.audio.exceptions.CannotReadException;
 import org.jaudiotagger.audio.exceptions.CannotWriteException;
-import org.jaudiotagger.audio.flac.metadatablock.*;
+import org.jaudiotagger.audio.flac.metadatablock.MetadataBlock;
+import org.jaudiotagger.audio.flac.metadatablock.MetadataBlockData;
+import org.jaudiotagger.audio.flac.metadatablock.MetadataBlockDataApplication;
+import org.jaudiotagger.audio.flac.metadatablock.MetadataBlockDataCueSheet;
+import org.jaudiotagger.audio.flac.metadatablock.MetadataBlockDataPadding;
+import org.jaudiotagger.audio.flac.metadatablock.MetadataBlockDataPicture;
+import org.jaudiotagger.audio.flac.metadatablock.MetadataBlockDataSeekTable;
+import org.jaudiotagger.audio.flac.metadatablock.MetadataBlockDataStreamInfo;
+import org.jaudiotagger.audio.flac.metadatablock.MetadataBlockHeader;
 import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagOptionSingleton;
 import org.jaudiotagger.tag.flac.FlacTag;
@@ -41,8 +51,6 @@ import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import static org.jaudiotagger.utils.PrimitiveUtils.safeLongToInt;
 
 
 /**

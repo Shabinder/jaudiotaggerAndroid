@@ -29,7 +29,17 @@ import org.jaudiotagger.tag.mp4.Mp4FieldKey;
 import org.jaudiotagger.tag.mp4.Mp4NonStandardFieldKey;
 import org.jaudiotagger.tag.mp4.Mp4Tag;
 import org.jaudiotagger.tag.mp4.atom.Mp4DataBox;
-import org.jaudiotagger.tag.mp4.field.*;
+import org.jaudiotagger.tag.mp4.field.Mp4DiscNoField;
+import org.jaudiotagger.tag.mp4.field.Mp4FieldType;
+import org.jaudiotagger.tag.mp4.field.Mp4GenreField;
+import org.jaudiotagger.tag.mp4.field.Mp4TagBinaryField;
+import org.jaudiotagger.tag.mp4.field.Mp4TagByteField;
+import org.jaudiotagger.tag.mp4.field.Mp4TagCoverField;
+import org.jaudiotagger.tag.mp4.field.Mp4TagRawBinaryField;
+import org.jaudiotagger.tag.mp4.field.Mp4TagReverseDnsField;
+import org.jaudiotagger.tag.mp4.field.Mp4TagTextField;
+import org.jaudiotagger.tag.mp4.field.Mp4TagTextNumberField;
+import org.jaudiotagger.tag.mp4.field.Mp4TrackField;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
