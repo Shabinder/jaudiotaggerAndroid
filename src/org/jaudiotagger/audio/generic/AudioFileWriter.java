@@ -273,7 +273,9 @@ public abstract class AudioFileWriter {
 
         // Create temporary File
         try {
-            newFile = File.createTempFile(af.getFile().getName().replace('.', '_'), TEMP_FILENAME_SUFFIX, af.getFile().getParentFile());
+            // use same ext of original file // fixes operation not permitted errors, since latest android only allows writing audio files.
+            String ext = af.getFile().getName().substring(af.getFile().getName().lastIndexOf("."));
+            newFile = File.createTempFile(af.getFile().getName().replace('.', '_'), TEMP_FILENAME_SUFFIX + ext, af.getFile().getParentFile());
         }
         // Unable to create temporary file, can happen in Vista if have Create
         // Files/Write Data set to Deny
@@ -552,12 +554,12 @@ public abstract class AudioFileWriter {
     private void transferNewFileToNewOriginalFile(final File newFile, final File originalFile) throws CannotWriteException {
         // Rename Original File
         // Can fail on Vista if have Special Permission 'Delete' set Deny
-        File originalFileBackup = new File(originalFile.getAbsoluteFile().getParentFile().getPath(), AudioFile.getBaseFilename(originalFile) + ".old");
+        File originalFileBackup = new File(originalFile.getAbsoluteFile().getParentFile().getPath(), AudioFile.getBaseFilename(originalFile) + ".old.m4a");
 
         //If already exists modify the suffix
         int count = 1;
         while (originalFileBackup.exists()) {
-            originalFileBackup = new File(originalFile.getAbsoluteFile().getParentFile().getPath(), AudioFile.getBaseFilename(originalFile) + ".old" + count);
+            originalFileBackup = new File(originalFile.getAbsoluteFile().getParentFile().getPath(), AudioFile.getBaseFilename(originalFile) + ".old.m4a" + count);
             count++;
         }
 
