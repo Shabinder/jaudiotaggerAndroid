@@ -1357,7 +1357,7 @@ public abstract class AbstractID3v2Tag extends AbstractID3Tag implements Tag
 
         try
         {
-            paddedFile = File.createTempFile(Utils.getBaseFilenameForTempFile(file), ".new", file.getParentFile());
+            paddedFile = File.createTempFile(Utils.getBaseFilenameForTempFile(file), ".temp.m4a", file.getParentFile());
             logger.finest("Created temp file:" + paddedFile.getName() + " for " + file.getName());
         }
         //Vista:Can occur if have Write permission on folder this file would be created in Denied
@@ -1575,12 +1575,12 @@ public abstract class AbstractID3v2Tag extends AbstractID3Tag implements Tag
     {
         boolean renameOriginalResult;
         //Rename Original File to make a backup in case problem with new file
-        File originalFileBackup = new File(originalFile.getAbsoluteFile().getParentFile().getPath(), AudioFile.getBaseFilename(originalFile) + ".old");
+        File originalFileBackup = new File(originalFile.getAbsoluteFile().getParentFile().getPath(), AudioFile.getBaseFilename(originalFile) + ".old.m4a");
         //If already exists modify the suffix
         int count = 1;
         while (originalFileBackup.exists())
         {
-            originalFileBackup = new File(originalFile.getAbsoluteFile().getParentFile().getPath(), AudioFile.getBaseFilename(originalFile) + ".old" + count);
+            originalFileBackup = new File(originalFile.getAbsoluteFile().getParentFile().getPath(), AudioFile.getBaseFilename(originalFile) + ".old.m4a" + count);
             count++;
         }
 

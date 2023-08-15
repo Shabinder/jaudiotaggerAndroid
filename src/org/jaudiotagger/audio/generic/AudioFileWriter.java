@@ -52,7 +52,7 @@ import java.util.logging.Logger;
  * @since v0.02
  */
 public abstract class AudioFileWriter {
-    private static final String TEMP_FILENAME_SUFFIX = ".tmp";
+    private static final String TEMP_FILENAME_SUFFIX = ".temp.m4a";
     private static final String WRITE_MODE = "rw";
     protected static final int MINIMUM_FILESIZE = 100;
 
