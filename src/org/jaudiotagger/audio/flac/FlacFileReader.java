@@ -31,14 +31,14 @@ import java.io.IOException;
  */
 public class FlacFileReader extends AudioFileReader2 {
 
-    private FlacInfoReader ir = new FlacInfoReader();
-    private FlacTagReader tr = new FlacTagReader();
+  private FlacInfoReader ir = new FlacInfoReader();
+  private FlacTagReader tr = new FlacTagReader();
 
-    protected GenericAudioHeader getEncodingInfo(File file) throws CannotReadException, IOException {
-        return ir.read(file);
-    }
+  protected GenericAudioHeader getEncodingInfo(File file) throws CannotReadException, IOException {
+    return ir.read(file);
+  }
 
-    protected Tag getTag(File file) throws CannotReadException, IOException {
-        return tr.read(file);
-    }
+  protected Tag getTag(File file) throws CannotReadException, IOException {
+    return tr.read(file);
+  }
 }

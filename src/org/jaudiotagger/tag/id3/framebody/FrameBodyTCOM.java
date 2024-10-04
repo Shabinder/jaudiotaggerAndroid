@@ -36,51 +36,45 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyTCOM extends AbstractFrameBodyTextInfo implements ID3v24FrameBody, ID3v23FrameBody
-{
-    /**
-     * Creates a new FrameBodyTCOM datatype.
-     */
-    public FrameBodyTCOM()
-    {
-    }
+public class FrameBodyTCOM extends AbstractFrameBodyTextInfo implements ID3v24FrameBody, ID3v23FrameBody {
+  /**
+   * Creates a new FrameBodyTCOM datatype.
+   */
+  public FrameBodyTCOM() {
+  }
 
-    public FrameBodyTCOM(FrameBodyTCOM body)
-    {
-        super(body);
-    }
+  public FrameBodyTCOM(FrameBodyTCOM body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyTCOM datatype.
-     *
-     * @param textEncoding
-     * @param text
-     */
-    public FrameBodyTCOM(byte textEncoding, String text)
-    {
-        super(textEncoding, text);
-    }
+  /**
+   * Creates a new FrameBodyTCOM datatype.
+   *
+   * @param textEncoding
+   * @param text
+   */
+  public FrameBodyTCOM(byte textEncoding, String text) {
+    super(textEncoding, text);
+  }
 
-    /**
-     * Creates a new FrameBodyTCOM datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws InvalidTagException if unable to create framebody from buffer
-     */
-    public FrameBodyTCOM(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyTCOM datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws InvalidTagException if unable to create framebody from buffer
+   */
+  public FrameBodyTCOM(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v24Frames.FRAME_ID_COMPOSER;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v24Frames.FRAME_ID_COMPOSER;
+  }
 }

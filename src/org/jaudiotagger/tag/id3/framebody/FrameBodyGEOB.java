@@ -30,8 +30,8 @@ import java.nio.ByteBuffer;
 
 /**
  * General encapsulated object frame.
- *
- *
+ * <p>
+ * <p>
  * In this frame any type of file can be encapsulated. After the header,
  * 'Frame size' and 'Encoding' follows 'MIME type' represented as
  * as a terminated string encoded with ISO-8859-1. The
@@ -58,106 +58,94 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyGEOB extends AbstractID3v2FrameBody implements ID3v24FrameBody, ID3v23FrameBody
-{
+public class FrameBodyGEOB extends AbstractID3v2FrameBody implements ID3v24FrameBody, ID3v23FrameBody {
 
-    /**
-     * Creates a new FrameBodyGEOB datatype.
-     */
-    public FrameBodyGEOB()
-    {
-        this.setObjectValue(DataTypes.OBJ_TEXT_ENCODING, TextEncoding.ISO_8859_1);
-        this.setObjectValue(DataTypes.OBJ_MIME_TYPE, "");
-        this.setObjectValue(DataTypes.OBJ_FILENAME, "");
-        this.setObjectValue(DataTypes.OBJ_DESCRIPTION, "");
-        this.setObjectValue(DataTypes.OBJ_DATA, new byte[0]);
+  /**
+   * Creates a new FrameBodyGEOB datatype.
+   */
+  public FrameBodyGEOB() {
+    this.setObjectValue(DataTypes.OBJ_TEXT_ENCODING, TextEncoding.ISO_8859_1);
+    this.setObjectValue(DataTypes.OBJ_MIME_TYPE, "");
+    this.setObjectValue(DataTypes.OBJ_FILENAME, "");
+    this.setObjectValue(DataTypes.OBJ_DESCRIPTION, "");
+    this.setObjectValue(DataTypes.OBJ_DATA, new byte[0]);
+  }
+
+  public FrameBodyGEOB(FrameBodyGEOB body) {
+    super(body);
+  }
+
+  /**
+   * Creates a new FrameBodyGEOB datatype.
+   *
+   * @param textEncoding
+   * @param mimeType
+   * @param filename
+   * @param description
+   * @param object
+   */
+  public FrameBodyGEOB(byte textEncoding, String mimeType, String filename, String description, byte[] object) {
+    this.setObjectValue(DataTypes.OBJ_TEXT_ENCODING, textEncoding);
+    this.setObjectValue(DataTypes.OBJ_MIME_TYPE, mimeType);
+    this.setObjectValue(DataTypes.OBJ_FILENAME, filename);
+    this.setObjectValue(DataTypes.OBJ_DESCRIPTION, description);
+    this.setObjectValue(DataTypes.OBJ_DATA, object);
+  }
+
+  /**
+   * Creates a new FrameBodyGEOB datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws InvalidTagException if unable to create framebody from buffer
+   */
+  public FrameBodyGEOB(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
+
+  /**
+   * @return the description field
+   */
+  public String getDescription() {
+    return (String) getObjectValue(DataTypes.OBJ_DESCRIPTION);
+  }
+
+  /**
+   * @param description
+   */
+  public void setDescription(String description) {
+    setObjectValue(DataTypes.OBJ_DESCRIPTION, description);
+  }
+
+  /**
+   * @return
+   */
+  public String getIdentifier() {
+    return ID3v24Frames.FRAME_ID_GENERAL_ENCAPS_OBJECT;
+  }
+
+
+  /**
+   * If the filename or description cannot be encoded using current encoder, change the encoder
+   */
+  public void write(ByteArrayOutputStream tagBuffer) {
+    if (!((AbstractString) getObject(DataTypes.OBJ_FILENAME)).canBeEncoded()) {
+      this.setTextEncoding(TextEncoding.UTF_16);
     }
-
-    public FrameBodyGEOB(FrameBodyGEOB body)
-    {
-        super(body);
+    if (!((AbstractString) getObject(DataTypes.OBJ_DESCRIPTION)).canBeEncoded()) {
+      this.setTextEncoding(TextEncoding.UTF_16);
     }
+    super.write(tagBuffer);
+  }
 
-    /**
-     * Creates a new FrameBodyGEOB datatype.
-     *
-     * @param textEncoding
-     * @param mimeType
-     * @param filename
-     * @param description
-     * @param object
-     */
-    public FrameBodyGEOB(byte textEncoding, String mimeType, String filename, String description, byte[] object)
-    {
-        this.setObjectValue(DataTypes.OBJ_TEXT_ENCODING, textEncoding);
-        this.setObjectValue(DataTypes.OBJ_MIME_TYPE, mimeType);
-        this.setObjectValue(DataTypes.OBJ_FILENAME, filename);
-        this.setObjectValue(DataTypes.OBJ_DESCRIPTION, description);
-        this.setObjectValue(DataTypes.OBJ_DATA, object);
-    }
-
-    /**
-     * Creates a new FrameBodyGEOB datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws InvalidTagException if unable to create framebody from buffer
-     */
-    public FrameBodyGEOB(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
-
-    /**
-     * @param description
-     */
-    public void setDescription(String description)
-    {
-        setObjectValue(DataTypes.OBJ_DESCRIPTION, description);
-    }
-
-    /**
-     * @return the description field
-     */
-    public String getDescription()
-    {
-        return (String) getObjectValue(DataTypes.OBJ_DESCRIPTION);
-    }
-
-    /**
-     * @return
-     */
-    public String getIdentifier()
-    {
-        return ID3v24Frames.FRAME_ID_GENERAL_ENCAPS_OBJECT;
-    }
-
-
-    /**
-     * If the filename or description cannot be encoded using current encoder, change the encoder
-     */
-    public void write(ByteArrayOutputStream tagBuffer)
-    {
-        if (!((AbstractString) getObject(DataTypes.OBJ_FILENAME)).canBeEncoded())
-        {
-            this.setTextEncoding(TextEncoding.UTF_16);
-        }
-        if (!((AbstractString) getObject(DataTypes.OBJ_DESCRIPTION)).canBeEncoded())
-        {
-            this.setTextEncoding(TextEncoding.UTF_16);
-        }
-        super.write(tagBuffer);
-    }
-
-    /**
-     *
-     */
-    protected void setupObjectList()
-    {
-        objectList.add(new NumberHashMap(DataTypes.OBJ_TEXT_ENCODING, this, TextEncoding.TEXT_ENCODING_FIELD_SIZE));
-        objectList.add(new StringNullTerminated(DataTypes.OBJ_MIME_TYPE, this));
-        objectList.add(new TextEncodedStringNullTerminated(DataTypes.OBJ_FILENAME, this));
-        objectList.add(new TextEncodedStringNullTerminated(DataTypes.OBJ_DESCRIPTION, this));
-        objectList.add(new ByteArraySizeTerminated(DataTypes.OBJ_DATA, this));
-    }
+  /**
+   *
+   */
+  protected void setupObjectList() {
+    objectList.add(new NumberHashMap(DataTypes.OBJ_TEXT_ENCODING, this, TextEncoding.TEXT_ENCODING_FIELD_SIZE));
+    objectList.add(new StringNullTerminated(DataTypes.OBJ_MIME_TYPE, this));
+    objectList.add(new TextEncodedStringNullTerminated(DataTypes.OBJ_FILENAME, this));
+    objectList.add(new TextEncodedStringNullTerminated(DataTypes.OBJ_DESCRIPTION, this));
+    objectList.add(new ByteArraySizeTerminated(DataTypes.OBJ_DATA, this));
+  }
 }

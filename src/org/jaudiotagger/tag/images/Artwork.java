@@ -8,63 +8,61 @@ import java.io.IOException;
 /**
  * Represents artwork in a format independent  way
  */
-public interface Artwork
-{
-    public byte[] getBinaryData();
+public interface Artwork {
+  public byte[] getBinaryData();
 
 
-    public void setBinaryData(byte[] binaryData);
+  public void setBinaryData(byte[] binaryData);
 
-    public String getMimeType();
+  public String getMimeType();
 
-    public void setMimeType(String mimeType);
+  public void setMimeType(String mimeType);
 
-    public String getDescription();
+  public String getDescription();
 
-    public int getHeight();
+  public void setDescription(String description);
 
-    public int getWidth();
+  public int getHeight();
 
-    public void setDescription(String description);
+  public void setHeight(int height);
 
-    /**
-     * Should be called when you wish to prime the artwork for saving
-     *
-     * @return
-     */
-    public boolean setImageFromData();
+  public int getWidth();
 
-    public Object getImage() throws IOException;
+  public void setWidth(int width);
 
-    public boolean isLinked();
+  /**
+   * Should be called when you wish to prime the artwork for saving
+   *
+   * @return
+   */
+  public boolean setImageFromData();
 
-    public void setLinked(boolean linked);
+  public Object getImage() throws IOException;
 
-    public String getImageUrl();
+  public boolean isLinked();
 
-    public void setImageUrl(String imageUrl);
+  public void setLinked(boolean linked);
 
-    public int getPictureType();
+  public String getImageUrl();
 
-    public void setPictureType(int pictureType);
+  public void setImageUrl(String imageUrl);
 
-    /**
-     * Create Artwork from File
-     *
-     * @param file
-     * @throws IOException
-     */
-    public void setFromFile(File file)  throws IOException;
+  public int getPictureType();
 
-    /**
-     * Populate Artwork from MetadataBlockDataPicture as used by Flac and VorbisComment
-     *
-     * @param coverArt
-     */
-    public void setFromMetadataBlockDataPicture(MetadataBlockDataPicture coverArt);
+  public void setPictureType(int pictureType);
 
+  /**
+   * Create Artwork from File
+   *
+   * @param file
+   * @throws IOException
+   */
+  public void setFromFile(File file) throws IOException;
 
-    public void setWidth(int width);
-
-    public void setHeight(int height);
+  /**
+   * Populate Artwork from MetadataBlockDataPicture as used by Flac and VorbisComment
+   *
+   * @param coverArt
+   */
+  public void setFromMetadataBlockDataPicture(MetadataBlockDataPicture coverArt);
 }

@@ -6,21 +6,19 @@ package org.jaudiotagger.audio.asf.data;
  *
  * @author Christian Laireiter
  */
-public class GUIDFormatException extends IllegalArgumentException
-{
+public class GUIDFormatException extends IllegalArgumentException {
 
-    /**
-     *
-     */
-    private static final long serialVersionUID = 6035645678612384953L;
+  /**
+   *
+   */
+  private static final long serialVersionUID = 6035645678612384953L;
 
-    /**
-     * Creates an instance.
-     *
-     * @param detail detail message.
-     */
-    public GUIDFormatException(final String detail)
-    {
-        super(detail);
-    }
+  /**
+   * Creates an instance.
+   *
+   * @param detail detail message.
+   */
+  public GUIDFormatException(final String detail) {
+    super(detail);
+  }
 }

@@ -34,50 +34,44 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyTOAL extends AbstractFrameBodyTextInfo implements ID3v23FrameBody,ID3v24FrameBody
-{
-    /**
-     * Creates a new FrameBodyTOAL datatype.
-     */
-    public FrameBodyTOAL()
-    {
-    }
+public class FrameBodyTOAL extends AbstractFrameBodyTextInfo implements ID3v23FrameBody, ID3v24FrameBody {
+  /**
+   * Creates a new FrameBodyTOAL datatype.
+   */
+  public FrameBodyTOAL() {
+  }
 
-    public FrameBodyTOAL(FrameBodyTOAL body)
-    {
-        super(body);
-    }
+  public FrameBodyTOAL(FrameBodyTOAL body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyTOAL datatype.
-     *
-     * @param textEncoding
-     * @param text
-     */
-    public FrameBodyTOAL(byte textEncoding, String text)
-    {
-        super(textEncoding, text);
-    }
+  /**
+   * Creates a new FrameBodyTOAL datatype.
+   *
+   * @param textEncoding
+   * @param text
+   */
+  public FrameBodyTOAL(byte textEncoding, String text) {
+    super(textEncoding, text);
+  }
 
-    /**
-     * Creates a new FrameBodyTOAL datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws InvalidTagException
-     */
-    public FrameBodyTOAL(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyTOAL datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws InvalidTagException
+   */
+  public FrameBodyTOAL(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v24Frames.FRAME_ID_ORIG_TITLE;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v24Frames.FRAME_ID_ORIG_TITLE;
+  }
 }

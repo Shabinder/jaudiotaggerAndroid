@@ -33,50 +33,44 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyTOLY extends AbstractFrameBodyTextInfo implements ID3v23FrameBody,ID3v24FrameBody
-{
-    /**
-     * Creates a new FrameBodyTOLY datatype.
-     */
-    public FrameBodyTOLY()
-    {
-    }
+public class FrameBodyTOLY extends AbstractFrameBodyTextInfo implements ID3v23FrameBody, ID3v24FrameBody {
+  /**
+   * Creates a new FrameBodyTOLY datatype.
+   */
+  public FrameBodyTOLY() {
+  }
 
-    public FrameBodyTOLY(FrameBodyTOLY body)
-    {
-        super(body);
-    }
+  public FrameBodyTOLY(FrameBodyTOLY body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyTOLY datatype.
-     *
-     * @param textEncoding
-     * @param text
-     */
-    public FrameBodyTOLY(byte textEncoding, String text)
-    {
-        super(textEncoding, text);
-    }
+  /**
+   * Creates a new FrameBodyTOLY datatype.
+   *
+   * @param textEncoding
+   * @param text
+   */
+  public FrameBodyTOLY(byte textEncoding, String text) {
+    super(textEncoding, text);
+  }
 
-    /**
-     * Creates a new FrameBodyTOLY datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws InvalidTagException
-     */
-    public FrameBodyTOLY(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyTOLY datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws InvalidTagException
+   */
+  public FrameBodyTOLY(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v24Frames.FRAME_ID_ORIG_LYRICIST;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v24Frames.FRAME_ID_ORIG_LYRICIST;
+  }
 }

@@ -33,50 +33,44 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyTOWN extends AbstractFrameBodyTextInfo implements ID3v23FrameBody, ID3v24FrameBody
-{
-    /**
-     * Creates a new FrameBodyTOWN datatype.
-     */
-    public FrameBodyTOWN()
-    {
-    }
+public class FrameBodyTOWN extends AbstractFrameBodyTextInfo implements ID3v23FrameBody, ID3v24FrameBody {
+  /**
+   * Creates a new FrameBodyTOWN datatype.
+   */
+  public FrameBodyTOWN() {
+  }
 
-    public FrameBodyTOWN(FrameBodyTOWN body)
-    {
-        super(body);
-    }
+  public FrameBodyTOWN(FrameBodyTOWN body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyTOWN datatype.
-     *
-     * @param textEncoding
-     * @param text
-     */
-    public FrameBodyTOWN(byte textEncoding, String text)
-    {
-        super(textEncoding, text);
-    }
+  /**
+   * Creates a new FrameBodyTOWN datatype.
+   *
+   * @param textEncoding
+   * @param text
+   */
+  public FrameBodyTOWN(byte textEncoding, String text) {
+    super(textEncoding, text);
+  }
 
-    /**
-     * Creates a new FrameBodyTOWN datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws InvalidTagException
-     */
-    public FrameBodyTOWN(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyTOWN datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws InvalidTagException
+   */
+  public FrameBodyTOWN(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v24Frames.FRAME_ID_FILE_OWNER;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v24Frames.FRAME_ID_FILE_OWNER;
+  }
 }

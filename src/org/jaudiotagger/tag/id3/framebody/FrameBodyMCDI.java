@@ -24,8 +24,8 @@ import java.nio.ByteBuffer;
 
 /**
  * Music CD identifier frame.
- *
- *
+ * <p>
+ * <p>
  * This frame is intended for music that comes from a CD, so that the CD
  * can be identified in databases such as the CDDB. The frame
  * consists of a binary dump of the Table Of Contents, TOC, from the CD,
@@ -50,58 +50,51 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyMCDI extends AbstractID3v2FrameBody implements ID3v24FrameBody, ID3v23FrameBody
-{
-    /**
-     * Creates a new FrameBodyMCDI datatype.
-     */
-    public FrameBodyMCDI()
-    {
-        this.setObjectValue(DataTypes.OBJ_DATA, new byte[0]);
-    }
+public class FrameBodyMCDI extends AbstractID3v2FrameBody implements ID3v24FrameBody, ID3v23FrameBody {
+  /**
+   * Creates a new FrameBodyMCDI datatype.
+   */
+  public FrameBodyMCDI() {
+    this.setObjectValue(DataTypes.OBJ_DATA, new byte[0]);
+  }
 
-    public FrameBodyMCDI(FrameBodyMCDI body)
-    {
-        super(body);
-    }
+  public FrameBodyMCDI(FrameBodyMCDI body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyMCDI datatype.
-     *
-     * @param cdTOC
-     */
-    public FrameBodyMCDI(byte[] cdTOC)
-    {
-        this.setObjectValue(DataTypes.OBJ_DATA, cdTOC);
-    }
+  /**
+   * Creates a new FrameBodyMCDI datatype.
+   *
+   * @param cdTOC
+   */
+  public FrameBodyMCDI(byte[] cdTOC) {
+    this.setObjectValue(DataTypes.OBJ_DATA, cdTOC);
+  }
 
-    /**
-     * Creates a new FrameBodyMCDI datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws InvalidTagException if unable to create framebody from buffer
-     */
-    public FrameBodyMCDI(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyMCDI datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws InvalidTagException if unable to create framebody from buffer
+   */
+  public FrameBodyMCDI(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v24Frames.FRAME_ID_MUSIC_CD_ID;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v24Frames.FRAME_ID_MUSIC_CD_ID;
+  }
 
-    /**
-     *
-     */
-    protected void setupObjectList()
-    {
-        objectList.add(new ByteArraySizeTerminated(DataTypes.OBJ_DATA, this));
-    }
+  /**
+   *
+   */
+  protected void setupObjectList() {
+    objectList.add(new ByteArraySizeTerminated(DataTypes.OBJ_DATA, this));
+  }
 }

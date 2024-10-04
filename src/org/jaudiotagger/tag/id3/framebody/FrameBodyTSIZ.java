@@ -33,50 +33,44 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyTSIZ extends AbstractFrameBodyTextInfo implements ID3v23FrameBody
-{
-    /**
-     * Creates a new FrameBodyTSIZ datatype.
-     */
-    public FrameBodyTSIZ()
-    {
-    }
+public class FrameBodyTSIZ extends AbstractFrameBodyTextInfo implements ID3v23FrameBody {
+  /**
+   * Creates a new FrameBodyTSIZ datatype.
+   */
+  public FrameBodyTSIZ() {
+  }
 
-    public FrameBodyTSIZ(FrameBodyTSIZ body)
-    {
-        super(body);
-    }
+  public FrameBodyTSIZ(FrameBodyTSIZ body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyTSIZ datatype.
-     *
-     * @param textEncoding
-     * @param text
-     */
-    public FrameBodyTSIZ(byte textEncoding, String text)
-    {
-        super(textEncoding, text);
-    }
+  /**
+   * Creates a new FrameBodyTSIZ datatype.
+   *
+   * @param textEncoding
+   * @param text
+   */
+  public FrameBodyTSIZ(byte textEncoding, String text) {
+    super(textEncoding, text);
+  }
 
-    /**
-     * Creates a new FrameBodyTSIZ datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws InvalidTagException
-     */
-    public FrameBodyTSIZ(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyTSIZ datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws InvalidTagException
+   */
+  public FrameBodyTSIZ(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v23Frames.FRAME_ID_V3_TSIZ;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v23Frames.FRAME_ID_V3_TSIZ;
+  }
 }

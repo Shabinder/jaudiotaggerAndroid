@@ -33,51 +33,45 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyTRSO extends AbstractFrameBodyTextInfo implements ID3v23FrameBody, ID3v24FrameBody
-{
-    /**
-     * Creates a new FrameBodyTRSO datatype.
-     */
-    public FrameBodyTRSO()
-    {
-    }
+public class FrameBodyTRSO extends AbstractFrameBodyTextInfo implements ID3v23FrameBody, ID3v24FrameBody {
+  /**
+   * Creates a new FrameBodyTRSO datatype.
+   */
+  public FrameBodyTRSO() {
+  }
 
-    public FrameBodyTRSO(FrameBodyTRSO body)
-    {
-        super(body);
-    }
+  public FrameBodyTRSO(FrameBodyTRSO body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyTRSO datatype.
-     *
-     * @param textEncoding
-     * @param text
-     */
-    public FrameBodyTRSO(byte textEncoding, String text)
-    {
-        super(textEncoding, text);
-    }
+  /**
+   * Creates a new FrameBodyTRSO datatype.
+   *
+   * @param textEncoding
+   * @param text
+   */
+  public FrameBodyTRSO(byte textEncoding, String text) {
+    super(textEncoding, text);
+  }
 
-    /**
-     * Creates a new FrameBodyTRSO datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws java.io.IOException
-     * @throws InvalidTagException
-     */
-    public FrameBodyTRSO(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyTRSO datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws java.io.IOException
+   * @throws InvalidTagException
+   */
+  public FrameBodyTRSO(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v24Frames.FRAME_ID_RADIO_OWNER;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v24Frames.FRAME_ID_RADIO_OWNER;
+  }
 }

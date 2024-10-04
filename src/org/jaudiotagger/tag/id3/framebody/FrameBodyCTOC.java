@@ -24,8 +24,8 @@ import java.nio.ByteBuffer;
 
 /**
  * Table of content frame.
- *
- *
+ * <p>
+ * <p>
  * The purpose of "CTOC" frames is to allow a table of contents to be
  * defined. In the simplest case, a single "CTOC" frame can be used to
  * provide a flat (single-level) table of contents. However, multiple
@@ -48,7 +48,7 @@ import java.nio.ByteBuffer;
  * <tr><td>&lt;Child Element ID list&gt;</td></tr>
  * <tr><td>&lt;Optional embedded sub-frames&gt;</td></tr>
  * </table>
- *
+ * <p>
  * The Element ID uniquely identifies the frame. It is not intended to
  * be human readable and should not be presented to the end-user.
  * <p>
@@ -72,7 +72,7 @@ import java.nio.ByteBuffer;
  * <table border="0" width="70%" align="center">
  * <tr><td nowrap="nowrap">Child Element ID</td><td>&nbsp;&nbsp;</td><td width="70%">&lt;text string&gt; $00</td></tr>
  * </table>
- *
+ * <p>
  * The last entry in the child Element ID list is followed by a sequence
  * of optional frames that are embedded within the "CTOC" frame and which
  * describe this element of the table of contents (e.g. a "TIT2" frame
@@ -94,52 +94,46 @@ import java.nio.ByteBuffer;
  * @author Marc Gimpel, Horizon Wimba S.A.
  * @version $Id$
  */
-public class FrameBodyCTOC extends AbstractID3v2FrameBody implements ID3v2ChapterFrameBody
-{
-    /**
-     * Creates a new FrameBodyCTOC datatype.
-     */
-    public FrameBodyCTOC()
-    {
-    }
+public class FrameBodyCTOC extends AbstractID3v2FrameBody implements ID3v2ChapterFrameBody {
+  /**
+   * Creates a new FrameBodyCTOC datatype.
+   */
+  public FrameBodyCTOC() {
+  }
 
-    /**
-     * Creates a new FrameBodyCTOC datatype.
-     *
-     * @param body
-     */
-    public FrameBodyCTOC(FrameBodyCTOC body)
-    {
-        super(body);
-    }
+  /**
+   * Creates a new FrameBodyCTOC datatype.
+   *
+   * @param body
+   */
+  public FrameBodyCTOC(FrameBodyCTOC body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyCTOC datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws InvalidTagException if unable to create framebody from buffer
-     */
-    public FrameBodyCTOC(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyCTOC datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws InvalidTagException if unable to create framebody from buffer
+   */
+  public FrameBodyCTOC(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v2ChapterFrames.FRAME_ID_TABLE_OF_CONTENT;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v2ChapterFrames.FRAME_ID_TABLE_OF_CONTENT;
+  }
 
-    /**
-     * TODO:proper mapping
-     */
-    protected void setupObjectList()
-    {
-        objectList.add(new ByteArraySizeTerminated(DataTypes.OBJ_DATA, this));
-    }
+  /**
+   * TODO:proper mapping
+   */
+  protected void setupObjectList() {
+    objectList.add(new ByteArraySizeTerminated(DataTypes.OBJ_DATA, this));
+  }
 }

@@ -50,50 +50,44 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyTFLT extends AbstractFrameBodyTextInfo implements ID3v24FrameBody, ID3v23FrameBody
-{
-    /**
-     * Creates a new FrameBodyTFLT datatype.
-     */
-    public FrameBodyTFLT()
-    {
-    }
+public class FrameBodyTFLT extends AbstractFrameBodyTextInfo implements ID3v24FrameBody, ID3v23FrameBody {
+  /**
+   * Creates a new FrameBodyTFLT datatype.
+   */
+  public FrameBodyTFLT() {
+  }
 
-    public FrameBodyTFLT(FrameBodyTFLT body)
-    {
-        super(body);
-    }
+  public FrameBodyTFLT(FrameBodyTFLT body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyTFLT datatype.
-     *
-     * @param textEncoding
-     * @param text
-     */
-    public FrameBodyTFLT(byte textEncoding, String text)
-    {
-        super(textEncoding, text);
-    }
+  /**
+   * Creates a new FrameBodyTFLT datatype.
+   *
+   * @param textEncoding
+   * @param text
+   */
+  public FrameBodyTFLT(byte textEncoding, String text) {
+    super(textEncoding, text);
+  }
 
-    /**
-     * Creates a new FrameBodyTFLT datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws InvalidTagException
-     */
-    public FrameBodyTFLT(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyTFLT datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws InvalidTagException
+   */
+  public FrameBodyTFLT(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v24Frames.FRAME_ID_FILE_TYPE;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v24Frames.FRAME_ID_FILE_TYPE;
+  }
 }

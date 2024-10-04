@@ -33,50 +33,44 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyWCOP extends AbstractFrameBodyUrlLink implements ID3v24FrameBody, ID3v23FrameBody
-{
-    /**
-     * Creates a new FrameBodyWCOP datatype.
-     */
-    public FrameBodyWCOP()
-    {
-    }
+public class FrameBodyWCOP extends AbstractFrameBodyUrlLink implements ID3v24FrameBody, ID3v23FrameBody {
+  /**
+   * Creates a new FrameBodyWCOP datatype.
+   */
+  public FrameBodyWCOP() {
+  }
 
-    /**
-     * Creates a new FrameBodyWCOP datatype.
-     *
-     * @param urlLink
-     */
-    public FrameBodyWCOP(String urlLink)
-    {
-        super(urlLink);
-    }
+  /**
+   * Creates a new FrameBodyWCOP datatype.
+   *
+   * @param urlLink
+   */
+  public FrameBodyWCOP(String urlLink) {
+    super(urlLink);
+  }
 
-    public FrameBodyWCOP(FrameBodyWCOP body)
-    {
-        super(body);
-    }
+  public FrameBodyWCOP(FrameBodyWCOP body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyWCOP datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws java.io.IOException
-     * @throws InvalidTagException
-     */
-    public FrameBodyWCOP(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyWCOP datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws java.io.IOException
+   * @throws InvalidTagException
+   */
+  public FrameBodyWCOP(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v24Frames.FRAME_ID_URL_COPYRIGHT;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v24Frames.FRAME_ID_URL_COPYRIGHT;
+  }
 }

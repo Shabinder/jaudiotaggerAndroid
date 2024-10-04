@@ -34,49 +34,43 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyWOAS extends AbstractFrameBodyUrlLink implements ID3v24FrameBody, ID3v23FrameBody
-{
-    /**
-     * Creates a new FrameBodyWOAS datatype.
-     */
-    public FrameBodyWOAS()
-    {
-    }
+public class FrameBodyWOAS extends AbstractFrameBodyUrlLink implements ID3v24FrameBody, ID3v23FrameBody {
+  /**
+   * Creates a new FrameBodyWOAS datatype.
+   */
+  public FrameBodyWOAS() {
+  }
 
-    /**
-     * Creates a new FrameBodyWOAS datatype.
-     *
-     * @param urlLink
-     */
-    public FrameBodyWOAS(String urlLink)
-    {
-        super(urlLink);
-    }
+  /**
+   * Creates a new FrameBodyWOAS datatype.
+   *
+   * @param urlLink
+   */
+  public FrameBodyWOAS(String urlLink) {
+    super(urlLink);
+  }
 
-    public FrameBodyWOAS(FrameBodyWOAS body)
-    {
-        super(body);
-    }
+  public FrameBodyWOAS(FrameBodyWOAS body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyWOAS datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws InvalidTagException
-     */
-    public FrameBodyWOAS(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyWOAS datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws InvalidTagException
+   */
+  public FrameBodyWOAS(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v24Frames.FRAME_ID_URL_SOURCE_WEB;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v24Frames.FRAME_ID_URL_SOURCE_WEB;
+  }
 }

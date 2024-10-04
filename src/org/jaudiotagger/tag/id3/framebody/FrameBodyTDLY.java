@@ -33,50 +33,44 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyTDLY extends AbstractFrameBodyTextInfo implements ID3v24FrameBody, ID3v23FrameBody
-{
-    /**
-     * Creates a new FrameBodyTDLY datatype.
-     */
-    public FrameBodyTDLY()
-    {
-    }
+public class FrameBodyTDLY extends AbstractFrameBodyTextInfo implements ID3v24FrameBody, ID3v23FrameBody {
+  /**
+   * Creates a new FrameBodyTDLY datatype.
+   */
+  public FrameBodyTDLY() {
+  }
 
-    public FrameBodyTDLY(FrameBodyTDLY body)
-    {
-        super(body);
-    }
+  public FrameBodyTDLY(FrameBodyTDLY body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyTDLY datatype.
-     *
-     * @param textEncoding
-     * @param text
-     */
-    public FrameBodyTDLY(byte textEncoding, String text)
-    {
-        super(textEncoding, text);
-    }
+  /**
+   * Creates a new FrameBodyTDLY datatype.
+   *
+   * @param textEncoding
+   * @param text
+   */
+  public FrameBodyTDLY(byte textEncoding, String text) {
+    super(textEncoding, text);
+  }
 
-    /**
-     * Creates a new FrameBodyTDLY datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws InvalidTagException
-     */
-    public FrameBodyTDLY(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyTDLY datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws InvalidTagException
+   */
+  public FrameBodyTDLY(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v24Frames.FRAME_ID_PLAYLIST_DELAY;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v24Frames.FRAME_ID_PLAYLIST_DELAY;
+  }
 }

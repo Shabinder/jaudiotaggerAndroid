@@ -33,50 +33,44 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyTSSE extends AbstractFrameBodyTextInfo implements ID3v23FrameBody, ID3v24FrameBody
-{
-    /**
-     * Creates a new FrameBodyTSSE datatype.
-     */
-    public FrameBodyTSSE()
-    {
-    }
+public class FrameBodyTSSE extends AbstractFrameBodyTextInfo implements ID3v23FrameBody, ID3v24FrameBody {
+  /**
+   * Creates a new FrameBodyTSSE datatype.
+   */
+  public FrameBodyTSSE() {
+  }
 
-    public FrameBodyTSSE(FrameBodyTSSE body)
-    {
-        super(body);
-    }
+  public FrameBodyTSSE(FrameBodyTSSE body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyTSSE datatype.
-     *
-     * @param textEncoding
-     * @param text
-     */
-    public FrameBodyTSSE(byte textEncoding, String text)
-    {
-        super(textEncoding, text);
-    }
+  /**
+   * Creates a new FrameBodyTSSE datatype.
+   *
+   * @param textEncoding
+   * @param text
+   */
+  public FrameBodyTSSE(byte textEncoding, String text) {
+    super(textEncoding, text);
+  }
 
-    /**
-     * Creates a new FrameBodyTSSE datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws InvalidTagException
-     */
-    public FrameBodyTSSE(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyTSSE datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws InvalidTagException
+   */
+  public FrameBodyTSSE(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v24Frames.FRAME_ID_HW_SW_SETTINGS;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v24Frames.FRAME_ID_HW_SW_SETTINGS;
+  }
 }

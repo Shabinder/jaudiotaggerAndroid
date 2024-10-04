@@ -34,69 +34,61 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyTDAT extends AbstractFrameBodyTextInfo implements ID3v23FrameBody
-{
-    public static final int DATA_SIZE = 4;
-    public static final int DAY_START = 0;
-    public static final int DAY_END = 2;
-    public static final int MONTH_START = 2;
-    public static final int MONTH_END = 4;
+public class FrameBodyTDAT extends AbstractFrameBodyTextInfo implements ID3v23FrameBody {
+  public static final int DATA_SIZE = 4;
+  public static final int DAY_START = 0;
+  public static final int DAY_END = 2;
+  public static final int MONTH_START = 2;
+  public static final int MONTH_END = 4;
 
 
-    private boolean monthOnly;
+  private boolean monthOnly;
 
-    /**
-     * Creates a new FrameBodyTDAT datatype.
-     */
-    public FrameBodyTDAT()
-    {
-    }
+  /**
+   * Creates a new FrameBodyTDAT datatype.
+   */
+  public FrameBodyTDAT() {
+  }
 
-    public FrameBodyTDAT(FrameBodyTDAT body)
-    {
-        super(body);
-    }
+  public FrameBodyTDAT(FrameBodyTDAT body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyTDAT datatype.
-     *
-     * @param textEncoding
-     * @param text
-     */
-    public FrameBodyTDAT(byte textEncoding, String text)
-    {
-        super(textEncoding, text);
-    }
+  /**
+   * Creates a new FrameBodyTDAT datatype.
+   *
+   * @param textEncoding
+   * @param text
+   */
+  public FrameBodyTDAT(byte textEncoding, String text) {
+    super(textEncoding, text);
+  }
 
-    /**
-     * Creates a new FrameBodyTDAT datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws InvalidTagException
-     */
-    public FrameBodyTDAT(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyTDAT datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws InvalidTagException
+   */
+  public FrameBodyTDAT(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v23Frames.FRAME_ID_V3_TDAT;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v23Frames.FRAME_ID_V3_TDAT;
+  }
 
-    public boolean isMonthOnly()
-    {
-        return monthOnly;
-    }
+  public boolean isMonthOnly() {
+    return monthOnly;
+  }
 
-    public void setMonthOnly(boolean monthOnly)
-    {
-        this.monthOnly = monthOnly;
-    }
+  public void setMonthOnly(boolean monthOnly) {
+    this.monthOnly = monthOnly;
+  }
 }

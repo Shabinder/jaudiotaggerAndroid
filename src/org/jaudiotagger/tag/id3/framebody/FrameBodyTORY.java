@@ -37,67 +37,60 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyTORY extends AbstractFrameBodyTextInfo implements ID3v23FrameBody
-{
-    private static final int NUMBER_OF_DIGITS_IN_YEAR = 4;
+public class FrameBodyTORY extends AbstractFrameBodyTextInfo implements ID3v23FrameBody {
+  private static final int NUMBER_OF_DIGITS_IN_YEAR = 4;
 
-    /**
-     * Creates a new FrameBodyTORY datatype.
-     */
-    public FrameBodyTORY()
-    {
-    }
+  /**
+   * Creates a new FrameBodyTORY datatype.
+   */
+  public FrameBodyTORY() {
+  }
 
-    public FrameBodyTORY(FrameBodyTORY body)
-    {
-        super(body);
-    }
+  public FrameBodyTORY(FrameBodyTORY body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyTORY datatype.
-     *
-     * @param textEncoding
-     * @param text
-     */
-    public FrameBodyTORY(byte textEncoding, String text)
-    {
-        super(textEncoding, text);
-    }
+  /**
+   * Creates a new FrameBodyTORY datatype.
+   *
+   * @param textEncoding
+   * @param text
+   */
+  public FrameBodyTORY(byte textEncoding, String text) {
+    super(textEncoding, text);
+  }
 
-    /**
-     * When converting v4 TDOR to v3 TORY frame
-     * @param body
-     */
-    public FrameBodyTORY(FrameBodyTDOR body)
-    {
-        setObjectValue(DataTypes.OBJ_TEXT_ENCODING, TextEncoding.ISO_8859_1);
-        String year=body.getText();
-        if(body.getText().length()> NUMBER_OF_DIGITS_IN_YEAR)
-        {
-            year=body.getText().substring(0, NUMBER_OF_DIGITS_IN_YEAR);
-        }
-        setObjectValue(DataTypes.OBJ_TEXT, year);
+  /**
+   * When converting v4 TDOR to v3 TORY frame
+   *
+   * @param body
+   */
+  public FrameBodyTORY(FrameBodyTDOR body) {
+    setObjectValue(DataTypes.OBJ_TEXT_ENCODING, TextEncoding.ISO_8859_1);
+    String year = body.getText();
+    if (body.getText().length() > NUMBER_OF_DIGITS_IN_YEAR) {
+      year = body.getText().substring(0, NUMBER_OF_DIGITS_IN_YEAR);
     }
+    setObjectValue(DataTypes.OBJ_TEXT, year);
+  }
 
-    /**
-     * Creates a new FrameBodyTORY datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws InvalidTagException
-     */
-    public FrameBodyTORY(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyTORY datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws InvalidTagException
+   */
+  public FrameBodyTORY(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v23Frames.FRAME_ID_V3_TORY;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v23Frames.FRAME_ID_V3_TORY;
+  }
 }

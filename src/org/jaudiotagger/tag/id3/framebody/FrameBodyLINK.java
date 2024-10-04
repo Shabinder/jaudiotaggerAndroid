@@ -26,8 +26,8 @@ import java.nio.ByteBuffer;
 
 /**
  * Linked information frame.
- *
- *
+ * <p>
+ * <p>
  * To keep space waste as low as possible this frame may be used to link
  * information from another ID3v2 tag that might reside in another audio
  * file or alone in a binary file. It is recommended that this method is
@@ -48,7 +48,7 @@ import java.nio.ByteBuffer;
  * <tr><td>URL                   </td><td>&lt;text string&gt; $00</td></tr>
  * <tr><td>ID and additional data</td><td>&lt;text string(s)&gt; </td></tr>
  * </table>
- *
+ * <p>
  * Frames that may be linked and need no additional data are "IPLS",
  * "MCID", "ETCO", "MLLT", "SYTC", "RVAD", "EQUA", "RVRB", "RBUF", the
  * text information frames and the URL link frames.
@@ -70,99 +70,88 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyLINK extends AbstractID3v2FrameBody implements ID3v24FrameBody, ID3v23FrameBody
-{
-    /**
-     * Creates a new FrameBodyLINK datatype.
-     */
-    public FrameBodyLINK()
-    {
-        //        this.setObject("Frame Identifier", "");
-        //        this.setObject("URL", "");
-        //        this.setObject("ID and Additional Data", "");
-    }
+public class FrameBodyLINK extends AbstractID3v2FrameBody implements ID3v24FrameBody, ID3v23FrameBody {
+  /**
+   * Creates a new FrameBodyLINK datatype.
+   */
+  public FrameBodyLINK() {
+    //        this.setObject("Frame Identifier", "");
+    //        this.setObject("URL", "");
+    //        this.setObject("ID and Additional Data", "");
+  }
 
-    public FrameBodyLINK(FrameBodyLINK body)
-    {
-        super(body);
-    }
+  public FrameBodyLINK(FrameBodyLINK body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyLINK datatype.
-     *
-     * @param frameIdentifier
-     * @param url
-     * @param additionalData
-     */
-    public FrameBodyLINK(String frameIdentifier, String url, String additionalData)
-    {
-        this.setObjectValue(DataTypes.OBJ_DESCRIPTION, frameIdentifier);
-        this.setObjectValue(DataTypes.OBJ_URL, url);
-        this.setObjectValue(DataTypes.OBJ_ID, additionalData);
-    }
+  /**
+   * Creates a new FrameBodyLINK datatype.
+   *
+   * @param frameIdentifier
+   * @param url
+   * @param additionalData
+   */
+  public FrameBodyLINK(String frameIdentifier, String url, String additionalData) {
+    this.setObjectValue(DataTypes.OBJ_DESCRIPTION, frameIdentifier);
+    this.setObjectValue(DataTypes.OBJ_URL, url);
+    this.setObjectValue(DataTypes.OBJ_ID, additionalData);
+  }
 
-    /**
-     * Creates a new FrameBodyLINK datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws InvalidTagException if unable to create framebody from buffer
-     */
-    public FrameBodyLINK(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyLINK datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws InvalidTagException if unable to create framebody from buffer
+   */
+  public FrameBodyLINK(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    /**
-     * @return
-     */
-    public String getAdditionalData()
-    {
-        return (String) getObjectValue(DataTypes.OBJ_ID);
-    }
+  /**
+   * @return
+   */
+  public String getAdditionalData() {
+    return (String) getObjectValue(DataTypes.OBJ_ID);
+  }
 
-    /**
-     * @param additionalData
-     */
-    public void getAdditionalData(String additionalData)
-    {
-        setObjectValue(DataTypes.OBJ_ID, additionalData);
-    }
+  /**
+   * @param additionalData
+   */
+  public void getAdditionalData(String additionalData) {
+    setObjectValue(DataTypes.OBJ_ID, additionalData);
+  }
 
-    /**
-     * @return
-     */
-    public String getFrameIdentifier()
-    {
-        return (String) getObjectValue(DataTypes.OBJ_DESCRIPTION);
-    }
+  /**
+   * @return
+   */
+  public String getFrameIdentifier() {
+    return (String) getObjectValue(DataTypes.OBJ_DESCRIPTION);
+  }
 
-    /**
-     * @param frameIdentifier
-     */
-    public void getFrameIdentifier(String frameIdentifier)
-    {
-        setObjectValue(DataTypes.OBJ_DESCRIPTION, frameIdentifier);
-    }
+  /**
+   * @param frameIdentifier
+   */
+  public void getFrameIdentifier(String frameIdentifier) {
+    setObjectValue(DataTypes.OBJ_DESCRIPTION, frameIdentifier);
+  }
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v24Frames.FRAME_ID_LINKED_INFO;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v24Frames.FRAME_ID_LINKED_INFO;
+  }
 
 
-    /**
-     *
-     */
-    protected void setupObjectList()
-    {
-        objectList.add(new StringFixedLength(DataTypes.OBJ_DESCRIPTION, this, 4));
-        objectList.add(new StringNullTerminated(DataTypes.OBJ_URL, this));
-        objectList.add(new StringSizeTerminated(DataTypes.OBJ_ID, this));
-    }
+  /**
+   *
+   */
+  protected void setupObjectList() {
+    objectList.add(new StringFixedLength(DataTypes.OBJ_DESCRIPTION, this, 4));
+    objectList.add(new StringNullTerminated(DataTypes.OBJ_URL, this));
+    objectList.add(new StringSizeTerminated(DataTypes.OBJ_ID, this));
+  }
 }

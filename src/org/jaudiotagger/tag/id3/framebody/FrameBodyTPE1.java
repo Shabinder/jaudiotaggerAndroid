@@ -33,50 +33,44 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyTPE1 extends AbstractFrameBodyTextInfo implements ID3v24FrameBody, ID3v23FrameBody
-{
-    /**
-     * Creates a new FrameBodyTPE1 datatype.
-     */
-    public FrameBodyTPE1()
-    {
-    }
+public class FrameBodyTPE1 extends AbstractFrameBodyTextInfo implements ID3v24FrameBody, ID3v23FrameBody {
+  /**
+   * Creates a new FrameBodyTPE1 datatype.
+   */
+  public FrameBodyTPE1() {
+  }
 
-    public FrameBodyTPE1(FrameBodyTPE1 body)
-    {
-        super(body);
-    }
+  public FrameBodyTPE1(FrameBodyTPE1 body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyTPE1 datatype.
-     *
-     * @param textEncoding
-     * @param text
-     */
-    public FrameBodyTPE1(byte textEncoding, String text)
-    {
-        super(textEncoding, text);
-    }
+  /**
+   * Creates a new FrameBodyTPE1 datatype.
+   *
+   * @param textEncoding
+   * @param text
+   */
+  public FrameBodyTPE1(byte textEncoding, String text) {
+    super(textEncoding, text);
+  }
 
-    /**
-     * Creates a new FrameBodyTPE1 datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws InvalidTagException
-     */
-    public FrameBodyTPE1(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyTPE1 datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws InvalidTagException
+   */
+  public FrameBodyTPE1(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v24Frames.FRAME_ID_ARTIST;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v24Frames.FRAME_ID_ARTIST;
+  }
 }

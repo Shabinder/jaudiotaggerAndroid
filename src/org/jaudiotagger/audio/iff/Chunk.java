@@ -9,31 +9,28 @@ import java.nio.ByteBuffer;
  *
  * @author Gary McGath
  */
-public abstract class Chunk
-{
-    protected ByteBuffer chunkData;
-    protected ChunkHeader chunkHeader;
+public abstract class Chunk {
+  protected ByteBuffer chunkData;
+  protected ChunkHeader chunkHeader;
 
 
+  /**
+   * Constructor used by Wav
+   *
+   * @param chunkData
+   * @param chunkHeader
+   */
+  public Chunk(ByteBuffer chunkData, ChunkHeader chunkHeader) {
+    this.chunkData = chunkData;
+    this.chunkHeader = chunkHeader;
+  }
 
-    /**
-     * Constructor used by Wav
-     *
-     * @param chunkData
-     * @param chunkHeader
-     */
-    public Chunk(ByteBuffer chunkData, ChunkHeader chunkHeader)
-    {
-        this.chunkData   = chunkData;
-        this.chunkHeader = chunkHeader;
-    }
-
-    /**
-     * Reads a chunk and puts appropriate information into
-     * the RepInfo object.
-     *
-     * @return <code>false</code> if the chunk is structurally
-     * invalid, otherwise <code>true</code>
-     */
-    public abstract boolean readChunk() throws IOException;
+  /**
+   * Reads a chunk and puts appropriate information into
+   * the RepInfo object.
+   *
+   * @return <code>false</code> if the chunk is structurally
+   * invalid, otherwise <code>true</code>
+   */
+  public abstract boolean readChunk() throws IOException;
 }

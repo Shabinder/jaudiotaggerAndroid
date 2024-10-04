@@ -33,51 +33,45 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyTCOP extends AbstractFrameBodyTextInfo implements ID3v24FrameBody, ID3v23FrameBody
-{
-    /**
-     * Creates a new FrameBodyTCOP datatype.
-     */
-    public FrameBodyTCOP()
-    {
-    }
+public class FrameBodyTCOP extends AbstractFrameBodyTextInfo implements ID3v24FrameBody, ID3v23FrameBody {
+  /**
+   * Creates a new FrameBodyTCOP datatype.
+   */
+  public FrameBodyTCOP() {
+  }
 
-    public FrameBodyTCOP(FrameBodyTCOP body)
-    {
-        super(body);
-    }
+  public FrameBodyTCOP(FrameBodyTCOP body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyTCOP datatype.
-     *
-     * @param textEncoding
-     * @param text
-     */
-    public FrameBodyTCOP(byte textEncoding, String text)
-    {
-        super(textEncoding, text);
-    }
+  /**
+   * Creates a new FrameBodyTCOP datatype.
+   *
+   * @param textEncoding
+   * @param text
+   */
+  public FrameBodyTCOP(byte textEncoding, String text) {
+    super(textEncoding, text);
+  }
 
-    /**
-     * Creates a new FrameBodyTCOP datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws InvalidTagException
-     */
-    public FrameBodyTCOP(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyTCOP datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws InvalidTagException
+   */
+  public FrameBodyTCOP(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v24Frames.FRAME_ID_COPYRIGHTINFO;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v24Frames.FRAME_ID_COPYRIGHTINFO;
+  }
 }

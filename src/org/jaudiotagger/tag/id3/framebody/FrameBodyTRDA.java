@@ -33,51 +33,45 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyTRDA extends AbstractFrameBodyTextInfo implements ID3v23FrameBody
-{
-    /**
-     * Creates a new FrameBodyTRDA datatype.
-     */
-    public FrameBodyTRDA()
-    {
-    }
+public class FrameBodyTRDA extends AbstractFrameBodyTextInfo implements ID3v23FrameBody {
+  /**
+   * Creates a new FrameBodyTRDA datatype.
+   */
+  public FrameBodyTRDA() {
+  }
 
-    public FrameBodyTRDA(FrameBodyTRDA body)
-    {
-        super(body);
-    }
+  public FrameBodyTRDA(FrameBodyTRDA body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyTRDA datatype.
-     *
-     * @param textEncoding
-     * @param text
-     */
-    public FrameBodyTRDA(byte textEncoding, String text)
-    {
-        super(textEncoding, text);
-    }
+  /**
+   * Creates a new FrameBodyTRDA datatype.
+   *
+   * @param textEncoding
+   * @param text
+   */
+  public FrameBodyTRDA(byte textEncoding, String text) {
+    super(textEncoding, text);
+  }
 
-    /**
-     * Creates a new FrameBodyTRDA datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws java.io.IOException
-     * @throws InvalidTagException
-     */
-    public FrameBodyTRDA(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyTRDA datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws java.io.IOException
+   * @throws InvalidTagException
+   */
+  public FrameBodyTRDA(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v23Frames.FRAME_ID_V3_TRDA;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v23Frames.FRAME_ID_V3_TRDA;
+  }
 }

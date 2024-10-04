@@ -29,51 +29,45 @@ import java.nio.ByteBuffer;
  * @author : Eric Farng
  * @version $Id$
  */
-public class FrameBodyGRP1 extends AbstractFrameBodyTextInfo implements ID3v24FrameBody, ID3v23FrameBody
-{
-    /**
-     * Creates a new FrameBodyTBPM datatype.
-     */
-    public FrameBodyGRP1()
-    {
-    }
+public class FrameBodyGRP1 extends AbstractFrameBodyTextInfo implements ID3v24FrameBody, ID3v23FrameBody {
+  /**
+   * Creates a new FrameBodyTBPM datatype.
+   */
+  public FrameBodyGRP1() {
+  }
 
-    public FrameBodyGRP1(FrameBodyGRP1 body)
-    {
-        super(body);
-    }
+  public FrameBodyGRP1(FrameBodyGRP1 body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyTBPM datatype.
-     *
-     * @param textEncoding
-     * @param text
-     */
-    public FrameBodyGRP1(byte textEncoding, String text)
-    {
-        super(textEncoding, text);
-    }
+  /**
+   * Creates a new FrameBodyTBPM datatype.
+   *
+   * @param textEncoding
+   * @param text
+   */
+  public FrameBodyGRP1(byte textEncoding, String text) {
+    super(textEncoding, text);
+  }
 
-    /**
-     * Creates a new FrameBodyTBPM datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws org.jaudiotagger.tag.InvalidTagException
-     */
-    public FrameBodyGRP1(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyTBPM datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws org.jaudiotagger.tag.InvalidTagException
+   */
+  public FrameBodyGRP1(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v24Frames.FRAME_ID_ITUNES_GROUPING;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v24Frames.FRAME_ID_ITUNES_GROUPING;
+  }
 }

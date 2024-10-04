@@ -22,62 +22,55 @@ import java.nio.ByteBuffer;
 
 /**
  * Apple defined Movement No/Total frame works the same way as the TRCK frame
- *
+ * <p>
  * This is not an official standard frame, but Apple makes its own rules !
  *
  * @author : Paul Taylor
  */
-public class FrameBodyMVIN extends AbstractFrameBodyNumberTotal implements ID3v24FrameBody, ID3v23FrameBody
-{
-    /**
-     * Creates a new FrameBodyTALB datatype.
-     */
-    public FrameBodyMVIN()
-    {
-    }
+public class FrameBodyMVIN extends AbstractFrameBodyNumberTotal implements ID3v24FrameBody, ID3v23FrameBody {
+  /**
+   * Creates a new FrameBodyTALB datatype.
+   */
+  public FrameBodyMVIN() {
+  }
 
-    public FrameBodyMVIN(FrameBodyMVIN body)
-    {
-        super(body);
-    }
+  public FrameBodyMVIN(FrameBodyMVIN body) {
+    super(body);
+  }
 
-    /**
-     * Creates a new FrameBodyTALB datatype.
-     *
-     * @param textEncoding
-     * @param text
-     */
-    public FrameBodyMVIN(byte textEncoding, String text)
-    {
-        super(textEncoding, text);
-    }
+  /**
+   * Creates a new FrameBodyTALB datatype.
+   *
+   * @param textEncoding
+   * @param text
+   */
+  public FrameBodyMVIN(byte textEncoding, String text) {
+    super(textEncoding, text);
+  }
 
-    /**
-     * Creates a new FrameBodyTALB datatype.
-     *
-     * @param byteBuffer
-     * @param frameSize
-     * @throws org.jaudiotagger.tag.InvalidTagException if unable to create framebody from buffer
-     */
-    public FrameBodyMVIN(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException
-    {
-        super(byteBuffer, frameSize);
-    }
+  /**
+   * Creates a new FrameBodyTALB datatype.
+   *
+   * @param byteBuffer
+   * @param frameSize
+   * @throws org.jaudiotagger.tag.InvalidTagException if unable to create framebody from buffer
+   */
+  public FrameBodyMVIN(ByteBuffer byteBuffer, int frameSize) throws InvalidTagException {
+    super(byteBuffer, frameSize);
+  }
 
-    public FrameBodyMVIN(byte textEncoding, Integer movementNo, Integer movementTotal)
-    {
-        super(textEncoding, movementNo, movementTotal);
-    }
+  public FrameBodyMVIN(byte textEncoding, Integer movementNo, Integer movementTotal) {
+    super(textEncoding, movementNo, movementTotal);
+  }
 
 
-    /**
-     * The ID3v2 frame identifier
-     *
-     * @return the ID3v2 frame identifier  for this frame type
-     */
-    public String getIdentifier()
-    {
-        return ID3v24Frames.FRAME_ID_MOVEMENT_NO;
-    }
+  /**
+   * The ID3v2 frame identifier
+   *
+   * @return the ID3v2 frame identifier  for this frame type
+   */
+  public String getIdentifier() {
+    return ID3v24Frames.FRAME_ID_MOVEMENT_NO;
+  }
 
 }
